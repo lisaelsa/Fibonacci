@@ -18,5 +18,5 @@ COPY . /app/
 EXPOSE 5000
 
 # Command to run the Flask application
-CMD ["python", "app.py"]
+CMD ["python", "Fibonacci.py"]
 
