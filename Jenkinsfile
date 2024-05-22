@@ -25,7 +25,7 @@ pipeline {
                 }
             }
         }
-    }
+        
     stage('Run Docker Container') {
             steps {
                 script {
@@ -39,6 +39,7 @@ pipeline {
                 }
             }
         }
+    }
 }
     post {
         success {
