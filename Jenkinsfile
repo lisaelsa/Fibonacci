@@ -48,4 +48,4 @@ pipeline {
             echo 'Failed to push Docker image to Docker Hub'
         }
     }
-}
+
