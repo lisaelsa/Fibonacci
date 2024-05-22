@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub_credentials') // Jenkins credentials ID for Docker Hub
         DOCKERHUB_REPO = 'lisaelsa/fibonacciapi'
+        CONTAINER_NAME= 'fibonacci_container'
     }
     stages {
         
