@@ -39,6 +39,7 @@ pipeline {
                 }
             }
         }
+}
     post {
         success {
             echo 'Docker image has been successfully pushed to Docker Hub'
