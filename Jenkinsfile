@@ -27,20 +27,7 @@ pipeline {
             }
         }
         
-    stage('Run Docker Container') {
-            steps {
-                script {
-                    // Remove any existing container with the same name
-                    sh 'docker rm -f fibonacci_container || true'
-
-                    // Run the Docker container
-                    sh '''
-                    docker run -d --name fibonacci_container -p 5000:5000 ${DOCKERHUB_REPO}:latest
-                    exit 0;
-                    '''    
-                }
-            }
-        }
+    
     }
 }
     post {
