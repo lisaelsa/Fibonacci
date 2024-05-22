@@ -36,12 +36,25 @@ pipeline {
                     sh '''
                     docker run -d --name fibonacci_container -p 5000:5000 ${DOCKERHUB_REPO}:latest
                     '''
+                    // Check if the container is running
+                    sh '''
+                    if ! docker ps | grep ${CONTAINER_NAME}; then
+                        echo "Container failed to start"
+                        exit 1
+                    fi
+                    '''
                 }
             }
         }
     }
 }
     post {
+        always {
+            script {
+                // Show logs from the container for debugging
+                sh 'docker logs ${CONTAINER_NAME}'
+            }
+        }
         success {
             echo 'Docker image has been successfully pushed to Docker Hub'
         }
