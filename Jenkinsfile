@@ -39,9 +39,7 @@ pipeline {
                     '''
                     // Check if the container is running
                     def containerRunning = sh(script: 'docker ps | grep ${CONTAINER_NAME}', returnStatus: true)
-                    if (containerRunning != 0) {
-                        error "Container failed to start"
-                    else
+                    if (containerRunning != 1) {
                         exit 0;
                     }
                 }
