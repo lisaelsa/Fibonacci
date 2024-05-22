@@ -5,11 +5,7 @@ pipeline {
         DOCKERHUB_REPO = 'lisaelsa/fibonacciapi'
     }
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/your-repo/your-project.git' // Replace with your repository URL
-            }
-        }
+        
         stage('Build Docker Image') {
             steps {
                 script {
